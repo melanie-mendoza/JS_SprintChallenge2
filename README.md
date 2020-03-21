@@ -30,14 +30,14 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
-forEach() — executes a provided function once for each array element.
-map() — creates a new array with the results of calling a provided function on every element in the calling array.
+forEach() — executes a provided function once for each array element. Does not have a return value. Has a side effect by console.log.
+map() — creates a new array with the results of calling a provided function on every element in the calling array. Map does not mutate the original array.
 
 2. What is the difference between a function and a method?
 
 A function is a subprogram designed to perform a particular task. Functions are executed when they are called. This is known as invoking a function. Values can be passed into functions and used within the function. Functions always return a value. In JavaScript, if no return value is specified, the function will return undefined. Functions are objects.
 
-A method - is a function that’s a value of a property of an object.
+A method - is a function that’s a value of a property of an object. It's essentially a function inside a function.
 
 3. What is closure?
 
@@ -45,7 +45,10 @@ The combination of a function, and the lexical environment within which that fun
 
 4. Describe the four rules of the 'this' keyword.
 
-Principle 1: Window/Global Object Binding. When in the global scope, the value of “this” will be the window/console Object.
+Principle 1: Window/Global Object Binding. When in the global scope, the value of “this” will be the window/console Object. 
+ex: function global() {
+      console.log(this) <---> points to the window.
+}
 
 Principle 2: Implicit Binding. Whenever a preceding dot calls a function, the object before the dot is this.
 
