@@ -19,15 +19,12 @@ function consume(a, b, cb) {
 
 function add(num1, num2) {
   return num1 + num2;
-  callback();
 }
 function multiply(num1, num2) {
   return num1 * num2;
-  callback();
 }
 function greeting(first_name, last_name) {
   return `Hello ${first_name} ${last_name}, nice to meet you!`
-  callback();
 }
 
 
@@ -40,15 +37,20 @@ function greeting(first_name, last_name) {
 
 // ==== Closures ==== 
 
-// Explain in your own words why nestedfunction can access the variable internal.
+// Explain in your own words why nestedFunction() can access the variable internal.
 
-// Explanation: Because it is the child of myFunction. The inner function (child) remembers the environment which it was created and it has access to the outer function's (parent) variables and parameters.
+// In JS, you can define a function inside another one. 
+// This means that nestedFunction() is a local variable to myFunc(). 
+// nestedFunction() and myFunc() are, therefore, in an enclosed environment with each other, which we call a closure.
+// A closure is a function being enclosed in another function, the enclosure creating an environment with which all data
+// associated within the environment are maintained.  In JS, all functions form closures.
+// Closures are the foundation of promises in JS and make it possible to handle asynchronous API calls.   
 
 
 const external = "I'm outside the function";
 
 function myFunction() {
-  console.log(external);
+   //console.log(external);
   const internal = "Hello! I'm inside myFunction!";
 
   function nestedFunction() {
@@ -57,3 +59,7 @@ function myFunction() {
   nestedFunction();
 }
 myFunction();
+
+
+
+// References: https://www.youtube.com/watch?v=-jysK0nlz7A

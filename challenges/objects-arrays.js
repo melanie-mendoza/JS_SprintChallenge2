@@ -55,7 +55,7 @@ console.log(tRex.period);
 tRex.roar = function() {
   return "RAWERSRARARWERSARARARRRR!"
 }
-console.log();
+console.log(tRex.roar());
 
 
 // ==== Arrays ====
@@ -120,7 +120,7 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = zooAnimals.forEach(function(animals) {
-  console.log (`Name: ${animals.animal_name} Scientific: ${animals.scientific_name}`);
+  return (`Name: ${animals.animal_name} Scientific: ${animals.scientific_name}`);
   });
 
 /* Request 2: .map()
